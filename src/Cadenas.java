@@ -12,4 +12,8 @@ public class Cadenas {
         }
         return cont;
     }
+
+    public String cadenaok() {
+        return "";
+    }
 }
