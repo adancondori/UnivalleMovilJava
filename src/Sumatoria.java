@@ -1,31 +1,24 @@
 public class Sumatoria {
-    // Suma de la serie siguiente serie 2,4,6,8......
-    // Dado 4 = 20
-    public int generarSumaPares(int numero) {
-        int total = 0;
-        int pares = 2;
+
+    // Dado N sumar la siguiente sumatoria
+    // 1, 3, 5, 7, . . . .
+    public int sumatoriaImpares(int numero) {
+        int resultado = 0;
+        int impar = 1;
         for (int i = 0; i < numero; i++) {
-            total = total + pares; // 2 / 4 / 6 / 8
-            pares = pares + 2;
+            resultado = resultado + impar;
+            impar = impar + 2;
         }
-        return total;
+        return resultado;
     }
 
-    public int generarEjercicio2(int numero) {
-        // N= 2 = 61
-        // N = 3 = 119
-        //60, 1, 58, 3, 56, 5, 54, 7, 52, 9
-        int serie1 = 60;
-        int serie2 = 1;
+    public int ejercicio1(int numero) {
+        // 3 + 6 + 12 + 24 + 48
         int resultado = 0;
-        for (int i = 1; i <= numero; i++) {
-            if (i % 2 != 0){
-                resultado = resultado + serie1;
-                serie1 = serie1 - 2;
-            } else {
-                resultado = resultado + serie2;
-                serie2 = serie2 + 2;
-            }
+        int auxiliar = 3;
+        for (int i = 0; i < numero; i++) {
+            resultado = resultado + auxiliar;// 3  // 6
+            auxiliar = auxiliar * 2;
         }
         return resultado;
     }

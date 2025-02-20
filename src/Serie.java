@@ -1,35 +1,47 @@
 public class Serie {
-    // generar la siguiente serie 2,4,6,8........
-    public String generarPares(int numero) {
-        String result = "";
-        int pares = 2;
-        for (int i = 0; i < numero; i++) {
-            result = result + String.valueOf(pares) + ", "; // 2, 4, 6,
-            pares = pares + 2;
-        }
-        return result;
-    }
-
-    public String generarEjercicio2(int numero) {
-        // 1 =  60
-        // 2 = 60, 1
-        //60, 1, 58, 3, 56, 5, 54, 7, 52, 9
-        //1   2  3   4   5 . . . . .
-        int serie1 = 60;
-        int serie2 = 1;
+    // Generar los primero numero impares
+    // N = 3
+    //== 1, 3, 5,
+    public String generarImpares(int numero) {
         String resultado = "";
-        for (int i = 1; i <= numero; i++) {
-            if (i % 2 != 0){
-                resultado = resultado + String.valueOf(serie1) + ", ";
-                serie1 = serie1 - 2;
-            } else {
-                resultado = resultado + String.valueOf(serie2) + ", ";
-                serie2 = serie2 + 2;
-            }
+        int impar = 1;
+        for (int i = 0; i < numero; i++) {
+            resultado = resultado + String.valueOf(impar) + ", "; 
+            impar = impar + 2;
+        }
+        return resultado;
+    }
+    
+    public String ejercicio1(int numero){
+        //4, 5, 9, 14, 23, 37
+        int anterior = 4;
+        int siguiente = 5;
+        int mostrar = 0;
+        String resultado = "";
+        for (int i = 0; i < numero; i++) {
+            resultado = resultado + String.valueOf(mostrar) + ", "; // 4,
+            mostrar = mostrar + anterior;// 4
+            anterior = siguiente;
+            siguiente = anterior + siguiente;// 9
         }
         return resultado;
     }
 
-
-
+    public String ejercicio2(int numero) {
+//        60, 1, 58, 3, 56, 5, 54, 7, 52, 9, 50, 11 ……
+//        1   2   3  4
+        int impar = 60;
+        int par = 1;
+        String resultado = "";
+        for (int i = 0; i < numero; i++) {
+            if (i % 2 != 0) {
+                resultado = resultado + par + ", "; // 60,
+                par = par + 2;
+            } else {
+                resultado = resultado + impar + ", "; // 60, 1,
+                impar = impar - 2;
+            }
+        }
+        return resultado;
+    }
 }

@@ -6,18 +6,21 @@ public class Main {
 
 //        int resultado = numeros.divisibleNum(10);
 //
-//        System.out.println(resultado);
         Serie serie = new Serie();
-        String value = serie.generarEjercicio2(3);
-        System.out.println("La serie es: " + value);
+//        String impares = serie.ejercicio2(1);
+//        System.out.println(impares);
 
-//
         Sumatoria sumatoria = new Sumatoria();
-        int total = sumatoria.generarEjercicio2(3);
-        System.out.println("Total es:" + total);
+        int count = sumatoria.ejercicio1(3);
+        System.out.println("La sumatoria es: " + count);
 
-        Cadenas cadenas = new Cadenas();
-        int cont = cadenas.ejercicio1("MUrcielAgO");
-        System.out.println("Cantidad de vocales: " + cont);
+        Cadena cadena = new Cadena();
+        System.out.println("Numero de Vocales: " + cadena.contarVocales("MUrcielagO"));
+        System.out.println("Invertir Cadena: " + cadena.ejecicio2("MUrcielagO"));
+
+//        Serie
+//        1, 0, 1, 0, 1, 0, 1, 0, 1 …
+//        Sumatoria
+//        F = 3 x 1 + 5 x 2 + 7 x 6 + 9 x 24 + ...........
     }
 }
