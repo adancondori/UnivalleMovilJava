@@ -2,58 +2,64 @@ import java.util.ArrayList;
 
 public class Vector {
 
-    public int getMayor(int[] mayor){
+    public void mostrarVector(int[] items) {
+        String cad = "";
+        for (int i = 0; i < items.length; i++) {
+            cad = cad + items[i] + ", ";
+        }
+        System.out.println("[ " + cad + "]");
+    }
+
+    public int obtenerMayor(int[] items ) {
         int aux = 0;
-        for (int i = 0; i < mayor.length; i++) {
-            if (mayor[i] > aux) {
-                aux = mayor[i];
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] > aux) {
+                aux = items[i];
             }
         }
         return aux;
     }
 
-//    Vector vector = new Vector();
-//    int[] vectorx = {1,100,20,0};
-//    System.out.println("Mayor es:" + vector.getMayor(vectorx));
+    public ArrayList<Integer> elimarItem(ArrayList list, int pos){
+        list.remove(pos-1);
+        return list;
+    }
+
     public int getSuma(int[] items){
+        int sum = 0;
+        for (int i = 0; i < items.length; i++) {
+            sum = sum + items[i];
+        }
+        return sum;
+    }
+    public void mostrarArraylist(ArrayList items) {
+        String cad = "";
+        for (int i = 0; i < items.size(); i++) {
+            cad = cad + items.get(i) + ", ";
+        }
+        System.out.println("[ " + cad + "]");
+    }
+
+    public int getSumaImpar(int[] items) {
         int aux = 0;
         for (int i = 0; i < items.length; i++) {
-            aux = aux + items[i];
+            if (items[i] % 2 != 0 ){
+                aux = aux + items[i];
+            }
         }
         return aux;
     }
 
-    // 10,4,5,6
-    // longitud = 4
-    public int[] invertir(int[] items) {
-        int inicio=0;
-        int fin=items.length - 1;
+    public int[] invertir(int[] items){
+        int inicio = 0;
+        int fin = items.length - 1;
         while (inicio < fin) {
-            int temp = items[fin];
-            items[fin] = items[inicio];
-            items[inicio] = temp;
+            int aux = items[inicio];
+            items[inicio] = items[fin];
+            items[fin] = aux;
             inicio++;
             fin--;
         }
         return items;
     }
-
-    public void mostrarVector(int[] vector) {
-        String cad = "";
-        for (int i = 0; i < vector.length; i++) {
-            cad = cad + vector[i] + ",";
-        }
-        System.out.println("[" + cad  + "]");
-    }
-
-    public void mostrarVectorArrayList(ArrayList vector) {
-        String cad = "";
-        for (int i = 0; i < vector.size(); i++) {
-            cad = cad + vector.get(i) + ",";
-
-        }
-        System.out.println("[" + cad  + "]");
-    }
-
-
 }
