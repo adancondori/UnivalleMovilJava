@@ -25,6 +25,7 @@ public class Numeros {
             int valor = numero / 10;
             resultado = resultado / valor;
         }
+
         return resultado;
     }
 }
